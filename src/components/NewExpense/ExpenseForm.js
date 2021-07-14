@@ -4,48 +4,64 @@ import React, { useState } from "react";
 import "../../scss/ExpenseForm.scss";
 
 function ExpenseForm() {
-  //   const [enteredTitle, setEnteredTitle] = useState("");
-  //   const [enteredAmount, setEnteredAmount] = useState("");
-  //   const [enteredDate, setEnteredDate] = useState("");
+  // using multiple useState in multiple Variables
+  const [enteredTitle, setEnteredTitle] = useState("");
+  const [enteredAmount, setEnteredAmount] = useState("");
+  const [enteredDate, setEnteredDate] = useState("");
 
-  // using one state Method instead of multiple States
-  const [userInput, setUserInput] = useState({
-    enteredTitle: "",
-    enteredAmount: "",
-    enteredDate: "",
-  });
+  // using one state Method instead of multiple useState
+  // const [userInput, setUserInput] = useState({
+  //   enteredTitle: "",
+  //   enteredAmount: "",
+  //   enteredDate: "",
+  // });
 
   const titleChangeHandler = (event) => {
     // using multiple useState
-    //   setEnteredTitle(event.target.value);
+    setEnteredTitle(event.target.value);
     ////////////////////////
     // using one state Method instead of multiple useState
-    setUserInput({
-      ...userInput, // spread operator
-      enteredTitle: event.target.value,
-    });
+    // this way is not a good practice, because it might fail
+    // setUserInput({
+    //   ...userInput, // spread operator
+    //   enteredTitle: event.target.value,
+    // });
+    // the more efficient way would be function inside a function
+    // setUserInput((prevState) => {
+    //   return { ...prevState, enteredTitle: event.target.value };
+    // });
   };
 
   const amountChangeHandler = (event) => {
     // using multiple useState
-    //setEnteredAmount(event.target.value);
+    setEnteredAmount(event.target.value);
     ////////////////////////
     // using one state Method instead of multiple useState
-    setUserInput({
-      ...userInput, // spread operator
-      enteredAmount: event.target.value,
-    });
+    // this way is not a good practice, because it might fail
+    // setUserInput({
+    //   ...userInput, // spread operator
+    //   enteredAmount: event.target.value,
+    // });
+    // the more efficient way would be function inside a function
+    // setUserInput((prevState) => {
+    //   return { ...prevState, enteredAmount: event.target.value };
+    // });
   };
 
   const dateChangeHandler = (event) => {
     // using multiple useState
-    //setEnteredDate(event.target.value);
+    setEnteredDate(event.target.value);
     ////////////////////////
     // using one state Method instead of multiple useState
-    setUserInput({
-      ...userInput, // spread operator
-      enteredDate: event.target.value,
-    });
+    //  this way is not a good practice, because it might fail
+    // setUserInput({
+    //   ...userInput, // spread operator
+    //   enteredDate: event.target.value,
+    // });
+    // the more efficient way would be function inside a function
+    // setUserInput((prevState) => {
+    //   return { ...prevState, enteredDate: event.target.value };
+    // });
   };
 
   return (
