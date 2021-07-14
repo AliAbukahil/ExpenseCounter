@@ -2,7 +2,7 @@ import React from "react";
 // Importing Components
 import NewExpense from "./components/NewExpense/NewExpense";
 import Expenses from "./components/Expenses/Expenses";
-
+import ExpensesFilter from "./components/Expenses/ExpensesFilter";
 const App = () => {
   const expenses = [
     {
