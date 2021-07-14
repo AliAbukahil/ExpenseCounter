@@ -31,6 +31,11 @@ const App = () => {
     },
   ];
 
+  const addExpenseHandler = (expense) => {
+    console.log("In App.js");
+    console.log(expense);
+  };
+
   // React under the hood version which is old
 
   // return React.createElement(
@@ -44,7 +49,7 @@ const App = () => {
 
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses} />
     </div>
   );

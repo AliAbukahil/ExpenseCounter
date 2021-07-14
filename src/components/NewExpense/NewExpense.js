@@ -6,10 +6,18 @@ import ExpenseForm from "./ExpenseForm";
 // Importing SASS Styles
 import "../../scss/NewExpense.scss";
 
-const NewExpense = () => {
+const NewExpense = (props) => {
+  const saveExpenseDataHandler = (enteredExpenseData) => {
+    const expenseData = {
+      ...enteredExpenseData,
+      id: Math.random().toString(),
+    };
+    props.onAddExpense(expenseData);
+  };
+
   return (
     <div className="new-expense">
-      <ExpenseForm />
+      <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
     </div>
   );
 };

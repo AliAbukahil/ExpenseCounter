@@ -3,7 +3,7 @@ import React, { useState } from "react";
 // Importing SASS Styles
 import "../../scss/ExpenseForm.scss";
 
-function ExpenseForm() {
+function ExpenseForm(props) {
   // using multiple useState in multiple Variables
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
@@ -72,7 +72,7 @@ function ExpenseForm() {
       amount: enteredAmount,
       date: new Date(enteredDate),
     };
-    console.log(expenseData);
+    props.onSaveExpenseData(expenseData);
     // The two way Binding to clear the input of the user after he/she submits
     // Step 1
     setEnteredTitle("");
