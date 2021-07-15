@@ -34,7 +34,7 @@ const App = () => {
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
 
   const addExpenseHandler = (expense) => {
-    // this is the clean way of updating our useState when it is based on older Snapshot.
+    // this is the clean way of updating our useState when it is based on an older Snapshot.
     setExpenses((prevExpenses) => {
       return [expense, ...prevExpenses];
     });
