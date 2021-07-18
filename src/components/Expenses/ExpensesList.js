@@ -8,7 +8,7 @@ import "../../scss/ExpensesList.scss";
 
 const ExpensesList = (props) => {
   if (props.items.length === 0) {
-    return <h2 className="expesses-list__fallback">found no expenses</h2>;
+    return <h2 className="expenses-list__fallback">found no expenses</h2>;
   }
 
   return (
