@@ -5,16 +5,17 @@ import ChartBar from "../Chart/ChartBar";
 
 // Importing Styles
 import "../../scss/Chart.scss";
-import { data } from "browserslist";
 
 const Chart = (props) => {
+  const dataPointValue = props.dataPoints.map((dataPoint) => dataPoint.value);
+  const totalMaximum = Math.max(...dataPointValue);
   return (
     <div className="chart">
       {props.dataPoints.map((dataPoint) => (
         <ChartBar
           key={dataPoint.label}
           value={dataPoint.value}
-          maxValue={null}
+          maxValue={totalMaximum}
           label={dataPoint.label}
         />
       ))}
